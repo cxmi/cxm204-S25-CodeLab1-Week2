@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
     //class is short for classification - a type of thing.
     //so GameManager is a type of thing - out of classes we make specific instances
     //a specific instance of a class is an object
-    public int score;
-    public int targetScore = 3;
+    public int score = 0;
+    public int targetScore = 1;
     
     public static GameManager instance;
     // static - no matter how many  gamemanagesr we have, there's only one of this variable
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(score);
         if (targetScore == score)
         {
-            targetScore *= 3;
+            targetScore += 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
